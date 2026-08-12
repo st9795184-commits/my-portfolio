@@ -1,4 +1,3 @@
-// Smooth scroll for nav links
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -9,7 +8,7 @@ document.querySelectorAll('nav a').forEach(link => {
     });
 });
 
-// Simple project link click alert (optional)
+
 document.querySelectorAll('.project-link').forEach(link => {
     link.addEventListener('click', function(e) {
         // Just letting you know it's working
@@ -17,6 +16,5 @@ document.querySelectorAll('.project-link').forEach(link => {
     });
 });
 
-// Add a small greeting in console
 console.log('Hey! Thanks for checking out my portfolio ✌️');
 
