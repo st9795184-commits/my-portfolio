@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- ===== PRIMARY SEO ===== -->
     <title>Sudip Tamang | Web Developer Portfolio – Itahari, Nepal</title>
@@ -393,6 +394,29 @@
     class="w-full max-w-4xl h-auto mt-4 object-cover select-none pointer-events-none"
   />
 </footer>
+    <script>
+        function updateNepalTime() {
+    const timeElement = document.getElementById('nepal-time');
+    if (!timeElement) return;
+
+    const options = {
+      timeZone: 'Asia/Kathmandu',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    };
+
+    const formatter = new Intl.DateTimeFormat('en-US', options);
+    const currentTime = formatter.format(new Date());
+
+    timeElement.textContent = `${currentTime} NPT`;
+  }
+
+  // Run initial call and set up interval
+  updateNepalTime();
+  setInterval(updateNepalTime, 1000);
+    </script>
 
     <script src="script.js"></script>
 </body>
