@@ -91,6 +91,41 @@
 
     <!-- ===== HERO SECTION  ===== -->
     <section id="hero">
+        <img 
+    id="box" 
+    src="https://cdn.phototourl.com/member/2026-10-14-32c83a70-d9b5-43a2-b1f9-6322fa56c47a.png" 
+    alt="Floating Cloud"
+    class="absolute left-12 top-12 w-28 h-auto cursor-grab active:cursor-grabbing [user-drag:none] [-webkit-user-drag:none] drop-shadow-lg transition-transform duration-75 active:scale-105"
+  />
+
+  <script>
+    const box = document.getElementById('box');
+    let isMoving = false;
+    let shiftX, shiftY;
+
+    // 1. Mouse Down: Grab the image
+    box.addEventListener('mousedown', (e) => {
+      isMoving = true;
+      
+      // Calculate distance from click point to top-left corner of image
+      shiftX = e.clientX - box.offsetLeft;
+      shiftY = e.clientY - box.offsetTop;
+    });
+
+    // 2. Mouse Move: Move smoothly with cursor
+    document.addEventListener('mousemove', (e) => {
+      if (!isMoving) return;
+
+      box.style.left = `${e.clientX - shiftX}px`;
+      box.style.top = `${e.clientY - shiftY}px`;
+    });
+
+    // 3. Mouse Up: Release the image
+    document.addEventListener('mouseup', () => {
+      isMoving = false;
+    });
+  </script>
+
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
